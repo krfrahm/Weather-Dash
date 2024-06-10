@@ -1,0 +1,60 @@
+:root {
+    --olive: #3e442b;
+    --grey: #6a7062;
+    --cool: #8d909b;
+    --lav: #aaadc4;
+    --sky: #d6eeff;
+
+}
+
+body {
+    background-color: var(--cool);
+}
+
+li {
+    list-style: none;
+}
+ 
+header{
+    background-color: var(--olive);
+    height: 100px;
+    color: var(--sky);
+    text-align: center;
+    align-content: center;
+}
+.past {
+    width: 25%;
+    background-color: var(--lav);
+    border: 1px dotted black;
+    text-align: center;
+    padding: 5px;
+    list-style: none;
+}
+
+.past button{
+    height: 40px;
+    width: 75%;
+    background-color: var(--grey);
+    list-style: none;
+    align-content: start;
+}
+
+.searchBox {
+    height: 100px;
+    width: 25%;
+    align-content: center;
+    background-color: var(--lav);
+    border: 1px dotted black;
+    text-align: center;
+    padding: 5px;
+}
+
+.currentCard {
+    background-color: var(--lav);
+    width: 70%;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    right: 0%;
+    
+}
