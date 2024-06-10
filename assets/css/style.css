@@ -7,8 +7,13 @@
 
 }
 
+* {
+    box-sizing: border-box;
+  }
+
 body {
     background-color: var(--cool);
+    margin: 0;
 }
 
 li {
@@ -57,4 +62,21 @@ header{
     top: 25%;
     right: 0%;
     
+}
+
+.fiveDay {
+    display: flex;
+    flex-direction: row;
+}
+
+.fiveDayCard {
+    display: flex;
+    width: 19%;
+    display: block;
+    background-color: var(--lav);
+    border: 1px dotted black;
+    flex: 1 0 0;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: 5px;
 }

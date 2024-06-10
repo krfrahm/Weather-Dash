@@ -2,7 +2,7 @@ const cityInputEl = document.getElementById('cityInput')
 const searchButton = document.getElementById('searchButton')
 const pastSearches = document.getElementById('pastSearches')
 const currentWeatherEl = document.getElementById('currentWeather')
-const fiveDay = document.getElementById ('5day')
+const fiveDay = document.getElementById ('fiveDay')
 const pastButton = document.getElementsByClassName('pastButton')
 
 const apiKeyLat = '3f163666b5dde31e5636f1163162fb15bed1633'
@@ -16,6 +16,8 @@ const searchArray = []
 const coordArray = []
 const currentArray = []
 const fiveDayArray = []
+let date = new Date().toLocaleDateString();
+
 
 
 
@@ -114,37 +116,143 @@ function currentWeather(){
       .then(function (data) {
         fiveDay.innerHTML = '';
     
-        const div = document.createElement('div');
+        const day1 = document.createElement('div');
         const h3 =  document.createElement('h3');
         const icon = document.createElement('p')
         const temp = document.createElement('p')
         const wind = document.createElement('p')
         const humid = document.createElement('p')
     
-        div.className = 'currentCard'
+        day1.className = 'fiveDayCard'
+        day1.id = 'day1'
         //h3.setAttribute ('weatherNow', current['name'])
-        h3.textContent =  fiveDayArray[0].name
+        h3.textContent =  date
         icon.textContent = currentArray[0].weather[0].icon
-        temp.textContent = 'Temp: ' + currentArray[0].main.temp
-        wind.textContent = 'Wind: ' + currentArray[0].wind.speed + 'mph'
-        humid.textContent = 'Humidity: ' + currentArray[0].main.humidity + '%'
+        temp.textContent = 'Temp: ' + fiveDayArray[0].list[5].main.temp
+        wind.textContent = 'Wind: ' + fiveDayArray[0].list[5].wind.speed + 'mph'
+        humid.textContent = 'Humidity: ' + fiveDayArray[0].list[5].main.humidity + '%'
     
-    
-    
-        fiveDay.appendChild(div)
-        div.appendChild(h3)
-        div.appendChild(icon)
-        div.appendChild(temp)
-        div.appendChild(wind)
-        div.appendChild(humid)
+        fiveDay.appendChild(day1)
+        day1.appendChild(h3)
+        day1.appendChild(icon)
+        day1.appendChild(temp)
+        day1.appendChild(wind)
+        day1.appendChild(humid)
+        
     })
+    .then(function (data) {
+    
+        const day2 = document.createElement('div');
+        const h3 =  document.createElement('h3');
+        const icon = document.createElement('p')
+        const temp = document.createElement('p')
+        const wind = document.createElement('p')
+        const humid = document.createElement('p')
+    
+        day2.className = 'fiveDayCard'
+        day2.id = 'day2'
+        //h3.setAttribute ('weatherNow', current['name'])
+        h3.textContent =  date
+        icon.textContent = currentArray[0].weather[0].icon
+        temp.textContent = 'Temp: ' + fiveDayArray[0].list[13].main.temp
+        wind.textContent = 'Wind: ' + fiveDayArray[0].list[13].wind.speed + 'mph'
+        humid.textContent = 'Humidity: ' + fiveDayArray[0].list[13].main.humidity + '%'
+    
+        fiveDay.appendChild(day2)
+        day2.appendChild(h3)
+        day2.appendChild(icon)
+        day2.appendChild(temp)
+        day2.appendChild(wind)
+        day2.appendChild(humid)
+        
+    })
+    .then(function (data) {
+    
+        const day3 = document.createElement('div');
+        const h3 =  document.createElement('h3');
+        const icon = document.createElement('p')
+        const temp = document.createElement('p')
+        const wind = document.createElement('p')
+        const humid = document.createElement('p')
+    
+        day3.className = 'fiveDayCard'
+        day3.id = 'day3'
+        //h3.setAttribute ('weatherNow', current['name'])
+        h3.textContent =  fiveDayArray[0].list[21].dx_txt
+        icon.textContent = currentArray[0].weather[0].icon
+        temp.textContent = 'Temp: ' + fiveDayArray[0].list[21].main.temp
+        wind.textContent = 'Wind: ' + fiveDayArray[0].list[21].wind.speed + 'mph'
+        humid.textContent = 'Humidity: ' + fiveDayArray[0].list[21].main.humidity + '%'
+    
+        fiveDay.appendChild(day3)
+        day3.appendChild(h3)
+        day3.appendChild(icon)
+        day3.appendChild(temp)
+        day3.appendChild(wind)
+        day3.appendChild(humid)
+        
+    })
+    .then(function (data) {
+    
+        const day4 = document.createElement('div');
+        const h3 =  document.createElement('h3');
+        const icon = document.createElement('p')
+        const temp = document.createElement('p')
+        const wind = document.createElement('p')
+        const humid = document.createElement('p')
+    
+        day4.className = 'fiveDayCard'
+        day4.id = 'day4'
+        //h3.setAttribute ('weatherNow', current['name'])
+        h3.textContent =  fiveDayArray[0].list[29].dx_txt
+        icon.textContent = currentArray[0].weather[0].icon
+        temp.textContent = 'Temp: ' + fiveDayArray[0].list[29].main.temp
+        wind.textContent = 'Wind: ' + fiveDayArray[0].list[29].wind.speed + 'mph'
+        humid.textContent = 'Humidity: ' + fiveDayArray[0].list[29].main.humidity + '%'
+    
+        fiveDay.appendChild(day4)
+        day4.appendChild(h3)
+        day4.appendChild(icon)
+        day4.appendChild(temp)
+        day4.appendChild(wind)
+        day4.appendChild(humid)
+        
+    })
+
+    .then(function (data) {
+    
+        const day5 = document.createElement('div');
+        const h3 =  document.createElement('h3');
+        const icon = document.createElement('p')
+        const temp = document.createElement('p')
+        const wind = document.createElement('p')
+        const humid = document.createElement('p')
+    
+        day5.className = 'fiveDayCard'
+        day5.id = 'day5'
+        //h3.setAttribute ('weatherNow', current['name'])
+        h3.textContent =  fiveDayArray[0].list[37].dx_txt
+        icon.textContent = currentArray[0].weather[0].icon
+        temp.textContent = 'Temp: ' + fiveDayArray[0].list[37].main.temp
+        wind.textContent = 'Wind: ' + fiveDayArray[0].list[37].wind.speed + 'mph'
+        humid.textContent = 'Humidity: ' + fiveDayArray[0].list[37].main.humidity + '%'
+    
+        fiveDay.appendChild(day5)
+        day5.appendChild(h3)
+        day5.appendChild(icon)
+        day5.appendChild(temp)
+        day5.appendChild(wind)
+        day5.appendChild(humid)
+        
+    })
+  
   
 }
 
 function pastSearchList() {
     pastSearches.innerHTML = '';
 
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 6; i++) {
     const past = searchArray[i]
 
     const li = document.createElement('button');
