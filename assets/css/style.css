@@ -56,11 +56,12 @@ header{
 
 .currentCard {
     background-color: var(--lav);
-    width: 70%;
+    width: 72%;
     padding: 10px;
     position: absolute;
-    top: 25%;
-    right: 0%;
+    top: 100px;
+    right: 0px;
+    margin: 10px;
     
 }
 
@@ -79,4 +80,10 @@ header{
     flex-wrap: wrap;
     padding: 5px;
     margin: 5px;
+}
+
+.fiveDayHeader {
+    background-color: var(--olive);
+    color: var(--sky);
+    margin: 0;
 }

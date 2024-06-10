@@ -77,6 +77,9 @@ function currentWeather(){
 
       .then(function (data) {
         currentWeatherEl.innerHTML = '';
+        const code = currentArray[0].weather[0].icon
+        const toUnicode = code => String.fromCodePoint(parseInt(code, 16))
+        console.log(toUnicode(code))
     
         const div = document.createElement('div');
         const h3 =  document.createElement('h3');
@@ -88,7 +91,7 @@ function currentWeather(){
         div.className = 'currentCard'
         //h3.setAttribute ('weatherNow', current['name'])
         h3.textContent =  currentArray[0].name
-        icon.textContent = currentArray[0].weather[0].icon
+        icon.textContent = toUnicode(code)
         temp.textContent = 'Temp: ' + currentArray[0].main.temp
         wind.textContent = 'Wind: ' + currentArray[0].wind.speed + 'mph'
         humid.textContent = 'Humidity: ' + currentArray[0].main.humidity + '%'
@@ -127,6 +130,7 @@ function currentWeather(){
         day1.id = 'day1'
         //h3.setAttribute ('weatherNow', current['name'])
         h3.textContent =  date
+        h3.className = 'fiveDayHeader'
         icon.textContent = currentArray[0].weather[0].icon
         temp.textContent = 'Temp: ' + fiveDayArray[0].list[5].main.temp
         wind.textContent = 'Wind: ' + fiveDayArray[0].list[5].wind.speed + 'mph'
@@ -153,6 +157,7 @@ function currentWeather(){
         day2.id = 'day2'
         //h3.setAttribute ('weatherNow', current['name'])
         h3.textContent =  date
+        h3.className = 'fiveDayHeader'
         icon.textContent = currentArray[0].weather[0].icon
         temp.textContent = 'Temp: ' + fiveDayArray[0].list[13].main.temp
         wind.textContent = 'Wind: ' + fiveDayArray[0].list[13].wind.speed + 'mph'
@@ -179,6 +184,7 @@ function currentWeather(){
         day3.id = 'day3'
         //h3.setAttribute ('weatherNow', current['name'])
         h3.textContent =  fiveDayArray[0].list[21].dx_txt
+        h3.className = 'fiveDayHeader'
         icon.textContent = currentArray[0].weather[0].icon
         temp.textContent = 'Temp: ' + fiveDayArray[0].list[21].main.temp
         wind.textContent = 'Wind: ' + fiveDayArray[0].list[21].wind.speed + 'mph'
@@ -205,6 +211,7 @@ function currentWeather(){
         day4.id = 'day4'
         //h3.setAttribute ('weatherNow', current['name'])
         h3.textContent =  fiveDayArray[0].list[29].dx_txt
+        h3.className = 'fiveDayHeader'
         icon.textContent = currentArray[0].weather[0].icon
         temp.textContent = 'Temp: ' + fiveDayArray[0].list[29].main.temp
         wind.textContent = 'Wind: ' + fiveDayArray[0].list[29].wind.speed + 'mph'
@@ -232,6 +239,7 @@ function currentWeather(){
         day5.id = 'day5'
         //h3.setAttribute ('weatherNow', current['name'])
         h3.textContent =  fiveDayArray[0].list[37].dx_txt
+        h3.className = 'fiveDayHeader'
         icon.textContent = currentArray[0].weather[0].icon
         temp.textContent = 'Temp: ' + fiveDayArray[0].list[37].main.temp
         wind.textContent = 'Wind: ' + fiveDayArray[0].list[37].wind.speed + 'mph'
