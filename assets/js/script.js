@@ -16,6 +16,7 @@ const searchArray = []
 const coordArray = []
 const currentArray = []
 const fiveDayArray = []
+
 function addDays(date, days) {
     const newDate = new Date(date);
     newDate.setDate(date.getDate() + days);
@@ -49,18 +50,18 @@ searchButton.addEventListener('click', function buttonClick(){
     return
 })
 
-// pastButton.addEventListener('click', function (){
-//     searchArray.unshift(pastButton.id)
-//     console.log(searchArray)
+pastButton.addEventListener('click', function (){
+    searchArray.unshift(pastButton.id)
+    console.log(searchArray)
     
-//     getLat()
-//     clearSearch()
-//     currentWeather()
-//     pastSearchList()
-//     // currentCard()
-//     // forecastCard()
-//     return
-// })
+    getLat()
+    clearSearch()
+    currentWeather()
+    pastSearchList()
+    // currentCard()
+    // forecastCard()
+    return
+})
 
 function getLat (){
     fetch(cityUrl+'city='+cityInputEl.value+'&api_key='+apiKeyLat )
@@ -317,6 +318,7 @@ function clearSearch(event){
 
 
 window.addEventListener("load", (event) => {
+    searchArray.value = ''
     getArray()
     pastSearchList()
     console.log("page is fully loaded");
